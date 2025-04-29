@@ -19,7 +19,7 @@ sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
 
-dev-journal.txt
+dev-journal*
 
 .env
 
