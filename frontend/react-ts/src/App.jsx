@@ -1,54 +1,14 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Tabs, Badge, Space, Button, Card, Empty, Typography, message, Alert, Flex } from 'antd';
 import { EditOutlined, RedoOutlined, DeleteOutlined } from '@ant-design/icons';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 import "./App.css"
 
-function Splash() {
-  return (
-    <>
-      <h1>ShowerQ</h1>
-      <h4>Huh?! You haven't taken a shower yet?</h4>
-    </>
-  );
-}
-
-const onChange = key => {
-  console.log(key);
-};
-const items = [
-  {
-    key: '1',
-    label: 'My Queue',
-    children: 'Content of My Queue',
-  },
-  {
-    key: '2',
-    label: 'Queue',
-    children: 'Content of Queue',
-  },
-];
-const TopTabs = () => <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
-
-
-const Cards = () => (
-  <Space direction="vertical" size={16}>
-    <h2>Who's showering?</h2>
-    <Card size="small" title="John Doe" /*extra={<a href="#">More</a>}*/ style={{ width: 300 }}>
-      <p>Queue time: 0830</p>
-      <p>Bath time: 0930</p>
-      <p>Queued for: 1 hour</p>
-      <p>Bath for: 3 minutes</p>
-    </Card>
-
-    <h2>Who're queueing? <Badge count="24" /></h2>
-    <Card size="small" title="John Doe" style={{ width: 300 }}>
-      <p>Queue time: 0830</p>
-      <p>Queued for: 1 hour</p>
-    </Card>
-  </Space>
-);
+import Splash from './views/Splash';
+import Home from './views/Home';
 
 const { Meta } = Card;
 const QueueCard = () => (
@@ -159,4 +119,23 @@ const AddQueueButton = () => (
   </Flex>
 );
 
-export default AddQueueButton;
+const App = () => (
+  <Router>
+    <div className="App">
+        <Routes>
+          <Route path="/" element={<Splash />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
+        </Routes>
+        {/* <TopTabs /> */}
+        {/* <EmptyList />
+        <ShowMessage />
+        <AlertNext />
+        <AlertNow />
+        <UrgeWithPleasureComponent />
+        <AddQueueButton /> */}
+    </div>
+  </Router>
+);
+
+export default App;
