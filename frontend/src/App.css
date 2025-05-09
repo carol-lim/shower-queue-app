@@ -1,0 +1,87 @@
+#root {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.App {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100%; /* Ensures it takes up the full height of its parent */
+    text-align: center; /* Optional: Centers text */
+    cursor: pointer; /* Keeps the pointer style */
+}
+
+.app-content {
+    height: 100%; /* Ensures the content area takes the full height of its parent */
+    width: 100%; /* Ensures the content area takes the full width of its parent */
+    flex: 1; /* Ensures the content area grows to fill available space */
+    padding: 1rem; /* Optional: Add padding for better spacing */
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.top-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: white; /* Match the background color of your app */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+.ant-tabs-nav {
+    display: flex;
+    justify-content: space-between; /* Distribute tabs evenly */
+    width: 100%; /* Ensure the tabs span the full width */
+}
+
+.ant-tabs-tab {
+    flex: 1; /* Make each tab take up an equal portion of the space */
+    text-align: center; /* Center the text inside each tab */
+}
