@@ -1,8 +1,9 @@
 import { Badge, Space, Card } from 'antd';
-import queueData from '../MockData/QueueList.json';
 
 
-const QueueList = () => {
+
+const QueueList = (props) => {
+    const queueData = props.queueData;
     const showering = queueData.find((entry) => entry["status_id.name"] === "showering");
     const waiting = queueData.filter((entry) => entry["status_id.name"] === "waiting");
     return (

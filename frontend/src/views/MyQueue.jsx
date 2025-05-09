@@ -1,9 +1,10 @@
 import { Badge, Space, Card } from 'antd';
-import queueData from '../MockData/QueueList.json';
+
 
 const MY_NAME = "Ivy Lee"
 
-const MyQueue = () => {
+const MyQueue = (props) => {
+    const queueData = props.queueData;
     const myCards = queueData.find((entry) => entry["user_profile_id.name"] === MY_NAME);
     return (
         <Space direction="vertical" size={16}>
