@@ -111,13 +111,7 @@ const UrgeWithPleasureComponent = () => (
   </CountdownCircleTimer>
 )
 
-const AddQueueButton = () => (
-  <Flex vertical gap="small" style={{ width: '100%' }}>
-    <Button type="primary" block>
-      +
-    </Button>
-  </Flex>
-);
+
 
 const App = () => (
   <Router>

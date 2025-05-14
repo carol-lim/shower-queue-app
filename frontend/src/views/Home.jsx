@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import TopTabs from "../components/TopTabs"
+import AddQueueButton from "../components/AddQueueButton"
 
 import MyQueue from "../views/MyQueue"
 import QueueList from "../views/QueueList"
@@ -34,7 +35,10 @@ const Home = () => {
         },
     ]
     return (
-        <TopTabs items={items}/>
+        <>
+            <TopTabs items={items}/>
+            <AddQueueButton />
+        </>
     )
 }
 
