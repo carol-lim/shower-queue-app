@@ -10,18 +10,7 @@ body {
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
-}
-
-.splash {
-  text-align: center;
-  cursor: pointer;
-}
-
-.splash-title {
-  font-size: 3rem;
-  margin: 0;
-  letter-spacing: 5px;
+  color-scheme: light;
 }
 
 h5 {
