@@ -8,9 +8,9 @@ function Splash() {
   };
 
   return (
-    <div className="splash" onClick={handleClick} style={{ cursor: "pointer" }}>
-      <h1 style={{ margin: 0, letterSpacing: 3 }}>ShowerQ</h1>
-      <h5 style={{ margin: 10 }}>Huh?! You haven't taken a shower yet?</h5>
+    <div className="splash" onClick={handleClick}>
+      <h1 className="splash-title">ShowerQ</h1>
+      <h5>Huh?! You haven't taken a shower yet?</h5>
     </div>
   );
 }
