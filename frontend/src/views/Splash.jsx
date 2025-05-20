@@ -8,9 +8,11 @@ function Splash() {
   };
 
   return (
-    <div className="splash" onClick={handleClick}>
-      <h1 className="splash-title">ShowerQ</h1>
-      <h5>Huh?! You haven't taken a shower yet?</h5>
+    <div className="splash-container">
+      <div className="splash" onClick={handleClick}>
+        <h1 className="splash-title">ShowerQ</h1>
+        <h5>Huh?! You haven't taken a shower yet?</h5>
+      </div>
     </div>
   );
 }
