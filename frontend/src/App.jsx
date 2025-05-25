@@ -1,22 +1,36 @@
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Tabs, Badge, Space, Button, Card, Empty, Typography, message, Alert, Flex } from 'antd';
-import { EditOutlined, RedoOutlined, DeleteOutlined } from '@ant-design/icons';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import {
+  Tabs,
+  Badge,
+  Space,
+  Button,
+  Card,
+  Empty,
+  Typography,
+  message,
+  Alert,
+  Flex,
+} from "antd";
+import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
-import "./App.css"
+import "./App.css";
 
-import Splash from './views/Splash';
-import Home from './views/Home';
+import Splash from "./views/Splash";
+import Home from "./views/Home";
 
 const { Meta } = Card;
 const QueueCard = () => (
   <Card
-    style={{ width: 300 }} title="John Doe" extra={ <Button type="primary" danger>
-      Start shower
-    </Button>}
-     
+    style={{ width: 300 }}
+    title="John Doe"
+    extra={
+      <Button type="primary" danger>
+        Start shower
+      </Button>
+    }
     actions={[
       <DeleteOutlined key="delete" />,
       <RedoOutlined key="redo" />,
@@ -25,35 +39,34 @@ const QueueCard = () => (
   >
     <p>Queue time: 0830</p>
     <p>Queued for: 1 hour</p>
-    
   </Card>
 );
 
-const EmptyList = () => <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} 
-description={
-  <Typography.Text>
-    Nobody's queueing 
-  </Typography.Text>
-}/>;
+const EmptyList = () => (
+  <Empty
+    image={Empty.PRESENTED_IMAGE_SIMPLE}
+    description={<Typography.Text>Nobody's queueing</Typography.Text>}
+  />
+);
 
 const ShowMessage = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const success = () => {
     messageApi.open({
-      type: 'success',
-      content: 'This is a success message',
+      type: "success",
+      content: "This is a success message",
     });
   };
   const error = () => {
     messageApi.open({
-      type: 'error',
-      content: 'This is an error message',
+      type: "error",
+      content: "This is an error message",
     });
   };
   const warning = () => {
     messageApi.open({
-      type: 'warning',
-      content: 'This is a warning message',
+      type: "warning",
+      content: "This is a warning message",
     });
   };
   return (
@@ -68,8 +81,7 @@ const ShowMessage = () => {
   );
 };
 
-
-let profileName = "Lily"
+let profileName = "Lily";
 const AlertNext = () => (
   <>
     <Alert
@@ -77,7 +89,6 @@ const AlertNext = () => (
       description="Prepare your clothes and towels and wait near the bathroom."
       type="warning"
     />
-   
   </>
 );
 
@@ -88,9 +99,9 @@ const AlertNow = () => (
         message={`${profileName}, now is your turn!`}
         description="Take your clothes and towels and go bath."
         type="error"
-        />
+      />
     </div>
-    
+
     <div>
       <Alert
         description="Automatically re-queue after 1 minute countdown."
@@ -104,25 +115,23 @@ const UrgeWithPleasureComponent = () => (
   <CountdownCircleTimer
     isPlaying
     duration={60}
-    colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+    colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
     colorsTime={[7, 5, 2, 0]}
   >
     {({ remainingTime }) => remainingTime}
   </CountdownCircleTimer>
-)
-
-
+);
 
 const App = () => (
   <Router>
     <div className="App">
-        <Routes>
-          <Route path="/" element={<Splash />} />
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
-        </Routes>
-        {/* <TopTabs /> */}
-        {/* <EmptyList />
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/home" element={<Home />} />
+        {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
+      </Routes>
+      {/* <TopTabs /> */}
+      {/* <EmptyList />
         <ShowMessage />
         <AlertNext />
         <AlertNow />
