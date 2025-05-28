@@ -5,7 +5,7 @@ import { BgColorsOutlined } from "@ant-design/icons";
 const AddQueueButton = () => (
   <div className="app-footer">
     <Flex vertical gap="small" style={{ width: "100%" }}>
-      <Button type="primary" style={{ background: "#00cfff" }} block>
+      <Button type="primary" block>
         + Queue
       </Button>
     </Flex>
