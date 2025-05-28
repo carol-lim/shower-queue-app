@@ -12,6 +12,7 @@ import {
   message,
   Alert,
   Flex,
+  ConfigProvider,
 } from "antd";
 import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -125,18 +126,26 @@ const UrgeWithPleasureComponent = () => (
 const App = () => (
   <Router>
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="/home" element={<Home />} />
-        {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
-      </Routes>
-      {/* <TopTabs /> */}
-      {/* <EmptyList />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#00cfff",
+          },
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Splash />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
+        </Routes>
+        {/* <TopTabs /> */}
+        {/* <EmptyList />
         <ShowMessage />
         <AlertNext />
         <AlertNow />
         <UrgeWithPleasureComponent />
         <AddQueueButton /> */}
+      </ConfigProvider>
     </div>
   </Router>
 );

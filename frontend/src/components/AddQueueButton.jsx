@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Flex } from "antd";
+import { BgColorsOutlined } from "@ant-design/icons";
 
 const AddQueueButton = () => (
   <div className="app-footer">
