@@ -1,4 +1,5 @@
-import { Badge, Space, Card, Empty, Typography } from "antd";
+import { Badge, Space, Card, Empty, Typography, Button, Row, Col } from "antd";
+import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const MY_NAME = "Tester 1";
 
@@ -8,13 +9,22 @@ const MyQueue = (props) => {
     (entry) => entry["user_profiles"]["name"] === MY_NAME
   );
   return (
-    <div style={{ maxHeight: "70vh", overflowY: "auto" }}>
-      <Space direction="vertical" size={16}>
+    <div>
+      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         {myCards ? (
           <Card
             size="small"
             title={`(${myCards["user_profiles"]?.["gender"]}) ${myCards["user_profiles"]?.["name"]}`}
-            style={{ width: 300 }}
+            extra={
+              <Button type="primary" danger>
+                Start shower
+              </Button>
+            }
+            actions={[
+              <DeleteOutlined key="delete" />,
+              <RedoOutlined key="redo" />,
+              <EditOutlined key="edit" />,
+            ]}
           >
             <p>
               Queue time: {new Date(myCards.queue_entry).toLocaleTimeString()}
