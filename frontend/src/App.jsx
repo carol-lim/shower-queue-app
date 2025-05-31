@@ -129,7 +129,7 @@ const App = () => (
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: "#00cfff",
+            colorPrimary: "#00cfff", // customize Ant Design primary color
           },
         }}
       >
