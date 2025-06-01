@@ -5,8 +5,8 @@ const QueueList = (props) => {
   const showering = queueData.find((entry) => entry["status"] === "showering");
   const waiting = queueData.filter((entry) => entry["status"] === "waiting");
   return (
-    <div style={{ maxHeight: "70vh", overflowY: "auto" }}>
-      <Space direction="vertical" size={16}>
+    <div>
+      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
         <h2>Who's showering?</h2>
         {showering ? (
           <Card
@@ -42,7 +42,6 @@ const QueueList = (props) => {
             key={entry.id}
             size="small"
             title={`(${entry["user_profiles"]?.["gender"]}) ${entry["user_profiles"]?.["name"]}`}
-            style={{ width: 300 }}
           >
             <p>
               Queue time: {new Date(entry.queue_entry).toLocaleTimeString()}
