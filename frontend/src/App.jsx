@@ -125,28 +125,26 @@ const UrgeWithPleasureComponent = () => (
 
 const App = () => (
   <Router>
-    <div className="App">
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#00cfff",
-          },
-        }}
-      >
-        <Routes>
-          <Route path="/" element={<Splash />} />
-          <Route path="/home" element={<Home />} />
-          {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
-        </Routes>
-        {/* <TopTabs /> */}
-        {/* <EmptyList />
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#00cfff", // customize Ant Design primary color
+        },
+      }}
+    >
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/home" element={<Home />} />
+        {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
+      </Routes>
+      {/* <TopTabs /> */}
+      {/* <EmptyList />
         <ShowMessage />
         <AlertNext />
         <AlertNow />
         <UrgeWithPleasureComponent />
         <AddQueueButton /> */}
-      </ConfigProvider>
-    </div>
+    </ConfigProvider>
   </Router>
 );
 

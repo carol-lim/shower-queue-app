@@ -14,7 +14,7 @@
   letter-spacing: 5px;
 }
 
-.App {
+#root {
   min-height: 95vh;
   display: flex;
   flex-direction: column;
