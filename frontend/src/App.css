@@ -5,7 +5,8 @@
   align-items: center;
   text-align: center;
   cursor: pointer;
-  min-height: 95vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .splash-title {
