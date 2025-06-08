@@ -21,7 +21,7 @@ import "./App.css";
 
 import Splash from "./views/Splash";
 import Home from "./views/Home";
-import Showering from "./views/Showering";
+// import Showering from "./views/Showering";
 
 const { Meta } = Card;
 const QueueCard = () => (
@@ -152,7 +152,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/showering" element={<Showering />} />
+          {/* <Route path="/showering" element={<Showering />} /> */}
           {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
         </Routes>
         {/* <TopTabs /> */}
