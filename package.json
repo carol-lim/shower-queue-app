@@ -13,6 +13,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "pnpm": "^10.10.0"
+    "pnpm": "^10.10.0",
+    "react-helmet": "^6.1.0"
   }
 }
