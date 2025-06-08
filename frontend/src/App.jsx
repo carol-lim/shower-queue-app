@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
@@ -21,6 +21,7 @@ import "./App.css";
 
 import Splash from "./views/Splash";
 import Home from "./views/Home";
+// import Showering from "./views/Showering";
 
 const { Meta } = Card;
 const QueueCard = () => (
@@ -123,29 +124,47 @@ const UrgeWithPleasureComponent = () => (
   </CountdownCircleTimer>
 );
 
-const App = () => (
-  <Router>
-    <ConfigProvider
-      theme={{
-        token: {
-          colorPrimary: "#00cfff", // customize Ant Design primary color
-        },
-      }}
-    >
-      <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="/home" element={<Home />} />
-        {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
-      </Routes>
-      {/* <TopTabs /> */}
-      {/* <EmptyList />
-        <ShowMessage />
-        <AlertNext />
-        <AlertNow />
-        <UrgeWithPleasureComponent />
-        <AddQueueButton /> */}
-    </ConfigProvider>
-  </Router>
-);
+const App = () => {
+  useEffect(() => {
+    function setAppHeight() {
+      const appHeight = window.innerHeight;
+      document.documentElement.style.setProperty(
+        "--app-height",
+        `${appHeight}px`
+      );
+    }
+
+    setAppHeight();
+    window.addEventListener("resize", setAppHeight);
+
+    return () => window.removeEventListener("resize", setAppHeight);
+  }, []);
+
+  return (
+    <Router>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#00cfff", // customize Ant Design primary color
+          },
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Splash />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/showering" element={<Showering />} /> */}
+          {/* <Route path="/queue/:id" element={<QueueCard />} /> */}
+        </Routes>
+        {/* <TopTabs /> */}
+        {/* <EmptyList />
+          <ShowMessage />
+          <AlertNext />
+          <AlertNow />
+          <UrgeWithPleasureComponent />
+          <AddQueueButton /> */}
+      </ConfigProvider>
+    </Router>
+  );
+};
 
 export default App;
