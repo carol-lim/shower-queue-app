@@ -1,7 +1,5 @@
-import { Badge, Space, Card, Empty, Typography, Button, Row, Col } from "antd";
+import { Space, Card, Empty, Typography, Button } from "antd";
 import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
-import { useState } from "react";
-import Showering from "../views/Showering";
 import { useNavigate } from "react-router-dom";
 
 const MY_NAME = "Tester 1";
