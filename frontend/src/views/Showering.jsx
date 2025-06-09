@@ -1,5 +1,6 @@
 import { Badge, Space, Card, Empty, Typography, Button, Row, Col } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const MY_NAME = "Tester 1";
 
@@ -8,19 +9,24 @@ const Showering = () => {
   // const myCards = queueData.find(
   //   (entry) => entry["user_profiles"]["name"] === MY_NAME
   // );
-  /**
-   * current result: "Start shower" button is working, but it's showing component instead of changing the view.
-   * Desired result: Show the showering view when the button is clicked.
-   * Showering view should display title "Showering", the info card and a button to stop showering.
-   *
-   */
   return (
     <div>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
-        <Empty
-          image={Empty.PRESENTED_IMAGE_SIMPLE}
-          description={<Typography.Text>Nobody's queueing</Typography.Text>}
-        />
+        <Card
+          size="small"
+          title="Tester 1"
+          extra={
+            <Button type="primary" danger>
+              Done shower
+            </Button>
+          }
+          actions={[<DeleteOutlined key="delete" />]}
+        >
+          <p>Queue time:</p>
+          <p>Bath time:</p>
+          <p>Queued for:</p>
+          <p>Bath for:</p>
+        </Card>
       </Space>
     </div>
   );
