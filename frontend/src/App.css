@@ -40,10 +40,3 @@
 .app-footer {
   padding-bottom: env(safe-area-inset-bottom);
 }
-
-.center-vertically {
-  /* works well in a container that already defined the flex-direction and app-height */
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
