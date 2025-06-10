@@ -12,11 +12,7 @@ const Showering = () => {
   const navigate = useNavigate();
   return (
     <div className="app-container">
-      <Space
-        direction="vertical"
-        size="middle"
-        style={{ display: "flex", justifyContent: "center", height: "100%" }}
-      >
+      <Space direction="vertical" size="middle" className="center-vertically">
         <Card
           size="small"
           title="Tester 1"
