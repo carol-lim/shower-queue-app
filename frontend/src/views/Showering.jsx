@@ -9,14 +9,19 @@ const Showering = () => {
   // const myCards = queueData.find(
   //   (entry) => entry["user_profiles"]["name"] === MY_NAME
   // );
+  const navigate = useNavigate();
   return (
-    <div>
-      <Space direction="vertical" size="middle" style={{ display: "flex" }}>
+    <div className="app-container">
+      <Space
+        direction="vertical"
+        size="middle"
+        style={{ display: "flex", justifyContent: "center", height: "100%" }}
+      >
         <Card
           size="small"
           title="Tester 1"
           extra={
-            <Button type="primary" danger>
+            <Button type="primary" danger onClick={() => navigate("/home")}>
               Done shower
             </Button>
           }
