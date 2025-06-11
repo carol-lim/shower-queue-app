@@ -1,12 +1,8 @@
 .splash-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   cursor: pointer;
   width: 100%;
-  min-height: 100vh;
+  height: var(--app-height);
 }
 
 .splash-title {
@@ -39,4 +35,11 @@
 
 .app-footer {
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+.center-vertically {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }

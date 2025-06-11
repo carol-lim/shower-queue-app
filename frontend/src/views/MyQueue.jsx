@@ -1,5 +1,6 @@
-import { Badge, Space, Card, Empty, Typography, Button, Row, Col } from "antd";
+import { Space, Card, Empty, Typography, Button } from "antd";
 import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const MY_NAME = "Tester 1";
 
@@ -8,6 +9,8 @@ const MyQueue = (props) => {
   const myCards = queueData.find(
     (entry) => entry["user_profiles"]["name"] === MY_NAME
   );
+  const navigate = useNavigate();
+
   return (
     <div>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
@@ -16,7 +19,11 @@ const MyQueue = (props) => {
             size="small"
             title={`(${myCards["user_profiles"]?.["gender"]}) ${myCards["user_profiles"]?.["name"]}`}
             extra={
-              <Button type="primary" danger>
+              <Button
+                type="primary"
+                danger
+                onClick={() => navigate("/showering")}
+              >
                 Start shower
               </Button>
             }
