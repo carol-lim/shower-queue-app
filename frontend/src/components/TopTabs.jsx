@@ -9,7 +9,7 @@ const TopTabs = (props) => {
   const items = props.items;
   console.log("TopTabs items: ", items);
   return (
-    <div className="top-tabs app-content">
+    <div>
       <Tabs defaultActiveKey="1" centered items={items} onChange={onChange} />
     </div>
   );
