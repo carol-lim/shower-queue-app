@@ -1,12 +1,15 @@
-import axios from 'axios';
-
-const API_BASE_URL = `http://localhost:${import.meta.env.VITE_API_PORT || 3000}`;
-
+import { supabase } from './supabaseClient';
 
 export const getQueueList = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/queue`);
-        return response.data;
+        const { data, error } = await supabase
+            .from('queues')
+            .select('*, user_profiles(name, gender)');
+        if (error) {
+            console.error('Error fetching queue list:', error);
+            throw error;
+        }
+        return data;
     } catch (error) {
         console.error('Error fetching queue list:', error);
         throw error;

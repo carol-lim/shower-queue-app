@@ -10,6 +10,8 @@ logs
 
 node_modules
 bower_components
+dist
+build
 
 *.sublime*
 
@@ -21,6 +23,6 @@ sketch
 
 dev-journal*
 
-.env
+.env.local
 
 .gitignore
