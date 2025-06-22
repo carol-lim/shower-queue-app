@@ -15,7 +15,7 @@
   max-width: 430px;
   margin: 0 auto;
   width: 80%;
-  min-height: 100vh;
+  min-height: var(--app-height);
   box-sizing: border-box;
 }
 
@@ -23,25 +23,35 @@
   height: var(--app-height);
   display: flex;
   flex-direction: column;
-}
-
-.app-content {
-  flex: 1;
-  overflow-y: auto;
   padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 .ant-tabs-nav {
+  flex: 0 0 auto !important; /* fixed height, no grow/shrink */
   position: sticky !important;
-  top: 0;
-  z-index: 10; /* Make sure it stays above content */
-  background: #fff; /* Prevent transparency when scrolling */
+  top: env(safe-area-inset-top);
+  z-index: 10;
+  background: #fff; /* solid background to cover content */
+}
+
+.ant-tabs-content-holder {
+  flex: 1 1 auto !important; /* fills remaining space */
+  overflow-y: auto; /* scroll if content overflows */
+  /* height: calc(100vh - 48px); */
 }
 
 .app-footer {
-  padding-bottom: env(safe-area-inset-bottom);
+  flex: 0 0 auto; /* fixed height */
+  position: sticky;
+  bottom: env(safe-area-inset-bottom);
+  background: #eee;
+  display: flex;
+  z-index: 10;
 }
 
 .center-vertically {
