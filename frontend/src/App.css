@@ -33,6 +33,13 @@
   padding-right: env(safe-area-inset-right);
 }
 
+.ant-tabs-nav {
+  position: sticky !important;
+  top: 0;
+  z-index: 10; /* Make sure it stays above content */
+  background: #fff; /* Prevent transparency when scrolling */
+}
+
 .app-footer {
   padding-bottom: env(safe-area-inset-bottom);
 }
