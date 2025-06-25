@@ -50,7 +50,6 @@
   flex: 0 0 auto; /* fixed height */
   position: sticky;
   bottom: env(safe-area-inset-bottom);
-  background: #eee;
   display: flex;
   z-index: 10;
   padding-bottom: 16px;
