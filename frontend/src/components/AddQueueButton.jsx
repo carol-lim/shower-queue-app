@@ -1,11 +1,13 @@
 import React from "react";
 import { Button, Flex } from "antd";
 import { BgColorsOutlined } from "@ant-design/icons";
+import { addToQueue } from "../api";
 
 const AddQueueButton = () => {
   const handleAddQueueClick = () => {
-    alert("Button clicked!"); // Display a success message
-    console.log("Ant Design Button was clicked!"); // Log a message to the console
+    addToQueue();
+    alert("Queue added!"); // Display a success message
+    console.log("Add Queue Button was clicked!"); // Log a message to the console
   };
 
   return (
