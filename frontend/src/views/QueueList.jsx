@@ -37,20 +37,30 @@ const QueueList = (props) => {
         <h2>
           Who're queueing? <Badge count={waiting.length} />
         </h2>
-        {waiting.map((entry) => (
-          <Card
-            key={entry.id}
-            size="small"
-            title={`(${entry["user_profiles"]?.["gender"]}) ${entry["user_profiles"]?.["name"]}`}
-          >
-            <p>
-              Queue time: {new Date(entry.queue_entry).toLocaleTimeString()}
-            </p>
-            <p>
-              Queued for: {entry.wait_time_minutes || "Calculating..."} minutes
-            </p>
-          </Card>
-        ))}
+        {waiting > 0 ? (
+          waiting.map((entry) => (
+            <Card
+              key={entry.id}
+              size="small"
+              title={`(${entry["user_profiles"]?.["gender"]}) ${entry["user_profiles"]?.["name"]}`}
+            >
+              <p>
+                Queue time: {new Date(entry.queue_entry).toLocaleTimeString()}
+              </p>
+              <p>
+                Queued for: {entry.wait_time_minutes || "Calculating..."}{" "}
+                minutes
+              </p>
+            </Card>
+          ))
+        ) : (
+          <Empty
+            image={Empty.PRESENTED_IMAGE_SIMPLE}
+            description={
+              <Typography.Text>Nobody is queueing now.</Typography.Text>
+            }
+          />
+        )}
       </Space>
     </div>
   );
