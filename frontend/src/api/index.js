@@ -16,11 +16,11 @@ export const getQueueList = async () => {
   }
 };
 
-export const addToQueue = async () => {
+export const addToQueue = async (userProfileId) => {
   try {
     const { data, error } = await supabase
       .from("queues")
-      .insert([{ user_profile_id: "1" }])
+      .insert([{ user_profile_id: userProfileId }])
       .select();
 
     if (error) {
