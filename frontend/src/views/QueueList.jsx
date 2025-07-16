@@ -37,7 +37,7 @@ const QueueList = (props) => {
         <h2>
           Who're queueing? <Badge count={waiting.length} />
         </h2>
-        {waiting > 0 ? (
+        {waiting.length > 0 ? (
           waiting.map((entry) => (
             <Card
               key={entry.id}
