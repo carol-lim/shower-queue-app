@@ -2,22 +2,22 @@ import { Space, Card, Empty, Typography, Button } from "antd";
 import { EditOutlined, RedoOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
-const MY_NAME = "Tester 1";
+const currentUserProfileName = "William";
 
 const MyQueue = (props) => {
-  const queueData = props.queueData;
-  const myCards = queueData.find(
-    (entry) => entry["user_profiles"]["name"] === MY_NAME
+  const queue = props.queue;
+  const currentUserProfileQueue = queue.find(
+    (entry) => entry["user_profiles"]["name"] === currentUserProfileName
   );
   const navigate = useNavigate();
 
   return (
     <div>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>
-        {myCards ? (
+        {currentUserProfileQueue ? (
           <Card
             size="small"
-            title={`(${myCards["user_profiles"]?.["gender"]}) ${myCards["user_profiles"]?.["name"]}`}
+            title={`(${currentUserProfileQueue["user_profiles"]?.["gender"]}) ${currentUserProfileQueue["user_profiles"]?.["name"]}`}
             extra={
               <Button
                 type="primary"
@@ -34,15 +34,20 @@ const MyQueue = (props) => {
             ]}
           >
             <p>
-              Queue time: {new Date(myCards.queue_entry).toLocaleTimeString()}
+              Queue time:{" "}
+              {new Date(
+                currentUserProfileQueue.queue_entry
+              ).toLocaleTimeString()}
             </p>
-            <p>
+            {/* <p>
               Bath time: {new Date(myCards.shower_start).toLocaleTimeString()}
-            </p>
-            <p>Queued for: {myCards.wait_time_minutes} minutes</p>
+            </p> */}
             <p>
-              Bath for: {myCards.shower_duration_minutes || "Ongoing"} minutes
+              Queued for: {currentUserProfileQueue.wait_time_minutes} minutes
             </p>
+            {/* <p>
+              Bath for: {myCards.shower_duration_minutes || "Ongoing"} minutes
+            </p> */}
           </Card>
         ) : (
           <Empty

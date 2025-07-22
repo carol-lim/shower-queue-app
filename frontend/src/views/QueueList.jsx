@@ -1,9 +1,9 @@
 import { Badge, Space, Card, Empty, Typography } from "antd";
 
 const QueueList = (props) => {
-  const queueData = props.queueData;
-  const showering = queueData.find((entry) => entry["status"] === "showering");
-  const waiting = queueData.filter((entry) => entry["status"] === "waiting");
+  const queue = props.queue;
+  const showering = queue.find((entry) => entry["status"] === "showering");
+  const waiting = queue.filter((entry) => entry["status"] === "waiting");
   return (
     <div>
       <Space direction="vertical" size="middle" style={{ display: "flex" }}>

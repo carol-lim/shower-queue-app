@@ -5,33 +5,33 @@ import AddQueueButton from "../components/AddQueueButton";
 
 import MyQueue from "../views/MyQueue";
 import QueueList from "../views/QueueList";
-import { getQueueList } from "../api";
+import { getQueue } from "../api";
 
 const Home = () => {
-  const [queueData, setQueueData] = useState([]);
+  const [queue, setQueue] = useState([]);
 
   useEffect(() => {
-    const fetchQueueData = async () => {
+    const fetchQueue = async () => {
       try {
-        const data = await getQueueList();
-        setQueueData(data);
+        const data = await getQueue();
+        setQueue(data);
       } catch (error) {
         console.error("Error fetching queue data:", error);
       }
     };
 
-    fetchQueueData();
+    fetchQueue();
   }, []);
   const items = [
     {
       key: "1",
       label: "My Queue",
-      children: <MyQueue queueData={queueData} />,
+      children: <MyQueue queue={queue} />,
     },
     {
       key: "2",
       label: "Queue",
-      children: <QueueList queueData={queueData} />,
+      children: <QueueList queue={queue} />,
     },
   ];
   return (

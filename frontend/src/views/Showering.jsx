@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 const MY_NAME = "Tester 1";
 
 const Showering = () => {
-  // const queueData = props.queueData;
-  // const myCards = queueData.find(
+  // const queue = props.queue;
+  // const myCards = queue.find(
   //   (entry) => entry["user_profiles"]["name"] === MY_NAME
   // );
   const navigate = useNavigate();
