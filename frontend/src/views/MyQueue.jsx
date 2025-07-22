@@ -17,7 +17,7 @@ const MyQueue = (props) => {
         {currentUserProfileQueue ? (
           <Card
             size="small"
-            title={`(${currentUserProfileQueue["user_profiles"]?.["gender"]}) ${myCards["user_profiles"]?.["name"]}`}
+            title={`(${currentUserProfileQueue["user_profiles"]?.["gender"]}) ${currentUserProfileQueue["user_profiles"]?.["name"]}`}
             extra={
               <Button
                 type="primary"
