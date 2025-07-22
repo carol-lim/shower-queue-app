@@ -64,7 +64,7 @@ export const getQueue = async () => {
   return data;
 };
 
-export const addQueueByUserProfileId = async (userProfileId) => {
+export const addQueue = async (userProfileId) => {
   // Get current queue
   const queue = JSON.parse(localStorage.getItem("queues")) || [];
   // Add new entry

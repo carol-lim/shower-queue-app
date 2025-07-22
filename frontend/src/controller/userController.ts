@@ -1,4 +1,4 @@
-import { getQueue, addQueueByUserProfileId } from '../api/index.js';
+import { getQueue, addQueue } from '../api/index.js';
 
 // Controller function to get user's queue data with error handling
 export const getQueueByName = async (userName: string) => {
@@ -27,7 +27,7 @@ export const addQueueByUserProfileId = async (userProfileId: string) => {
     if (!userProfileId) {
       throw new Error('User profile ID is required')
     }
-    const result = await addQueueByUserProfileId(userProfileId)
+    const result = await addQueue(userProfileId)
     // Business logic: check if result is valid
     if (!result || result.length === 0) {
       throw new Error('Failed to add user to queue')
