@@ -8,7 +8,7 @@ const currentUserProfileId = "1";
 const AddQueueButton = () => {
   const handleAddQueueClick = () => {
     addQueueByUserProfileId(currentUserProfileId);
-    alert("Added userProfileID " + MYcurrentUserProfileId_ID + " to queue."); // Display a success message
+    alert("Added userProfileID " + currentUserProfileId + " to queue."); // Display a success message
     console.log("Added userProfileID " + currentUserProfileId + " to queue."); // Log a message to the console
   };
 
