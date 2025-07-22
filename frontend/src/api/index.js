@@ -44,8 +44,6 @@ if (!localStorage.getItem("queues")) {
       user_profiles: { name: "Tester 1", gender: "Male" },
       queue_entry: Date.now(),
       shower_start: null,
-      wait_time_minutes: 0,
-      shower_duration_minutes: null,
       status: "waiting",
     },
     {
@@ -54,8 +52,6 @@ if (!localStorage.getItem("queues")) {
       user_profiles: { name: "Tester 2", gender: "Female" },
       queue_entry: Date.now(),
       shower_start: null,
-      wait_time_minutes: 0,
-      shower_duration_minutes: null,
       status: "waiting",
     },
   ];

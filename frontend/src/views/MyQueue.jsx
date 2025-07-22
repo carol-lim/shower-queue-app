@@ -36,13 +36,13 @@ const MyQueue = (props) => {
             <p>
               Queue time: {new Date(myCards.queue_entry).toLocaleTimeString()}
             </p>
-            <p>
+            {/* <p>
               Bath time: {new Date(myCards.shower_start).toLocaleTimeString()}
-            </p>
+            </p> */}
             <p>Queued for: {myCards.wait_time_minutes} minutes</p>
-            <p>
+            {/* <p>
               Bath for: {myCards.shower_duration_minutes || "Ongoing"} minutes
-            </p>
+            </p> */}
           </Card>
         ) : (
           <Empty
