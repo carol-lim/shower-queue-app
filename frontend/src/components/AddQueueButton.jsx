@@ -1,15 +1,15 @@
 import React from "react";
 import { Button, Flex } from "antd";
 import { BgColorsOutlined } from "@ant-design/icons";
-import { addUserToQueue } from "../controller/userController.ts";
+import { addQueueByUserProfileId } from "../controller/userController.ts";
 
-const MY_ID = "1";
+const currentUserProfileId = "1";
 
 const AddQueueButton = () => {
   const handleAddQueueClick = () => {
-    addUserToQueue(MY_ID);
-    alert("Added userProfileID " + MY_ID + " to queue."); // Display a success message
-    console.log("Added userProfileID " + MY_ID + " to queue."); // Log a message to the console
+    addQueueByUserProfileId(currentUserProfileId);
+    alert("Added userProfileID " + MYcurrentUserProfileId_ID + " to queue."); // Display a success message
+    console.log("Added userProfileID " + currentUserProfileId + " to queue."); // Log a message to the console
   };
 
   return (
